@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="./style.css">
+     <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600,700|Source+Sans+Pro:400,600,700&display=swap">
+</head>
+
+<body>
+     <div class="main__container">
+          <div class="main__wrap">
+               <div class="card__wrap">
+                    <img src="https://i.postimg.cc/5tF3BhL8/eror.png" alt="Платёжная система">
+                    <h1 class="card__Number" id="cardNumber">#### #### #### ####</h1>
+                    <div class="other__card__info">
+                         <div class="cardName__wrap">
+                              <h3>Имя на карте</h3>
+                              <h2 id="cardName">Имя Фамилия</h2>
+                         </div>
+                         <div class="cardData__wrap">
+                              <h3>Истекает</h3>
+                              <h2><span class="cardMonth">Месяц</span>/<span class="cardYear">Год</span></h2>
+                         </div>
+                    </div>
+               </div>
+               <form class="content__wrap">
+                    <label>
+                         <h1 class="title-input">Номер карты</h1>
+                         <input onfocus="store.focusCardSide()" class="entry-field" maxlength="16"
+                              onkeyup="store.renderCardNumber(event)" id="mainInput" type="text">
+                    </label>
+                    <label>
+                         <h1 class="title-input">Имя на карте</h1>
+                         <input onfocus="store.focusCardSide()" class="entry-field" maxlength="21"
+                              onkeyup="store.renderCardName(event)" id="mainInput" type="text">
+                    </label>
+                    <div class="other__info__card">
+                         <div class="other__info__date">
+                              <h1 class="title-input">Срок действия</h1>
+                              <div class="other__info__date__inputs">
+                                   <select onfocus="store.focusCardSide()" class="entry-field" name="month" id=""
+                                        onchange="store.renderCardDate(event, '.cardData__wrap .cardMonth')">
+                                        <option value="00" disabled selected>Месяц</option>
+                                        <option value="01">Январь</option>
+                                        <option value="02">Февраль</option>
+                                        <option value="03">Март</option>
+                                        <option value="04">Апрель</option>
+                                        <option value="05">Май</option>
+                                        <option value="06">Июнь</option>
+                                        <option value="07">Июль</option>
+                                        <option value="08">Август</option>
+                                        <option value="09">Сентябрь</option>
+                                        <option value="10">Октябрь</option>
+                                        <option value="11">Ноябрь</option>
+                                        <option value="12">Декабрь</option>
+                                   </select>
+                                   <select onfocus="store.focusCardSide()" class="entry-field" name="year" id=""
+                                        onchange="store.renderCardDate(event, '.cardData__wrap .cardYear')">
+                                        <option value="Год" disabled selected>Год</option>
+                                        <option value="2023">2011</option>
+                                        <option value="2024">2012</option>
+                                        <option value="2025">2012</option>
+                                        <option value="2026">2012</option>
+                                        <option value="2027">2012</option>
+                                        <option value="2028">2012</option>
+                                        <option value="2029">2012</option>
+                                        <option value="2030">2012</option>
+                                        <option value="2031">2012</option>
+                                        <option value="2032">2012</option>
+                                   </select>
+                              </div>
+                         </div>
+                         <div class="other__info__code">
+                              <h1 class="title-input">CW</h1>
+                              <input onfocus="store.focusCardSide('reverse')" maxlength="3"
+                                   onkeyup="store.renderCardCW(event)" class="entry-field" type="text" name="" id="">
+                         </div>
+                    </div>
+                    <button type="submit">Отправить данные</button>
+               </form>
+          </div>
+     </div>
+</body>
+
+</html>
+<script src="./app.js"></script>
+
+
+<!-- <body>
+     <div id="f"></div>
+</body>-->
